@@ -24,6 +24,7 @@ export default () => {
     const store = createStore(rootReducer, composeEnhancers(middlewares));
     
     sagas.forEach(sagaMiddleware.run);
-
+    console.log('Store is connected!');
+    
     return store
 }

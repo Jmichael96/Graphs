@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Provider } from 'react-redux';
+import createStore from './Store';
+import { ToastContainer } from 'react-toastify';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
+const store = createStore();
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CssBaseline />
+      <Provider store={store}>
+        <ToastContainer />
+        <h1>Well Hello!!!</h1>
+      </Provider>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import * as actions from "../actionTypes";
+import * as actions from '../actionTypes';
 
 const initialState = {
     metric: "",
