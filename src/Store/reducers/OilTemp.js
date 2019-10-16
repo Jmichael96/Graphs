@@ -1,4 +1,4 @@
-import * as actions from '../actionTypes';
+import * as actions from '../actions/actionTypes';
 
 const initialState = {
     metric: "",
@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
     const { updatedObject } = action;
 
     switch (action.type) {
-        case actions.OIL_TEMP_RECIEVED:
+        case actions.RECIEVED_OIL:
             return {
                 ...state,
                 metric: updatedObject.metric,

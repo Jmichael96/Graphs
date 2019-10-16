@@ -1,4 +1,4 @@
-import * as actions from '../actionTypes';
+import * as actions from '../actions/actionTypes';
 
 const initialState = {
     metric: "",
@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
     const { updatedObject } = action;
 
     switch (action.type) {
-        case actions.TUBING_PRESSURE_DATA_RECIEVED:
+        case actions.RECIEVED_TUBING:
             return {
                 ...state,
                 metric: updatedObject.metric,

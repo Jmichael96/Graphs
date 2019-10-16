@@ -1,4 +1,4 @@
-import * as actions from '../actionTypes';
+import * as actions from '../actions/actionTypes';
 
 const initialState = {
     metric: "",
@@ -10,9 +10,9 @@ const initialState = {
 
 export default (state = initialState, action) => {
     const { updatedObject } = action;
-
+    // console.log(updatedObject)
     switch (action.type) {
-        case actions.WATER_TEMP_RECIEVED:
+        case actions.RECIEVED_WATER:
             return {
                 ...state,
                 metric: updatedObject.metric,

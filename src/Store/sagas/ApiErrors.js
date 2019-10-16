@@ -1,5 +1,5 @@
 import { takeEvery, call } from "redux-saga/effects";
-import * as actions from "../actionTypes";
+import * as actions from "../actions/actionTypes";
 import { toast } from "react-toastify";
 
 function* apiErrorReceived(action) {
