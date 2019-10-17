@@ -14,6 +14,8 @@ import Flare from './Components/FlareTemp/Index';
 import InjValve from './Components/InjValve/Index';
 import Oil from './Components/OilTemp/Index';
 import Chart from './Components/Chart/Chart';
+import Header from './Components/Header/Header';
+
 const store = createStore();
 
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
     <div className="App">
       <CssBaseline />
       <Provider store={store}>
+        <Header />
         <ToastContainer />
         <h1>Well Hello!!!</h1>
         <Wrapper>
