@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withStyles } from "@material-ui/core/styles";
-import { fetchWater } from '../../Store/actions/actions';
+import { fetchWaterAction } from '../../Store/actions/actions';
 
 const metricStyles = theme => ({
 
@@ -16,16 +16,28 @@ class Metrics extends React.Component {
     }
 
     componentDidMount() {
-        console.log('the class component water!');
-       console.log( this.props.water)
+        // console.log('the class component water!');
+    //    console.log( this.props.water);
        const { value, unit, metric } = this.props.water;
        let updatedObject = {
            value,
            unit,
            metric
        }
-       this.props.fetchWater(updatedObject)
+       fetchWaterAction();
+       this.props.fetchWaterAction()
+    //    console.log(this.props.fetchWaterAction())
+    //    this.props.fetchWater(updatedObject)
     }
+
+    // getWaterData = (state) => {
+    //     const { metric, value, unit } = state.water;
+    //     return {
+    //         metric,
+    //         value,
+    //         unit
+    //     }
+    // }
     render() {
         const { classes } = this.props;
 
@@ -43,7 +55,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchWater: () => dispatch(fetchWater())
+    // fetchWaterAction: () => dispatch(fetchWaterAction()),
+    // fetchWater: () => dispatch(fetchWater())
 });
 
 const metrics = withStyles(metricStyles)(Metrics);

@@ -10,7 +10,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
     const { updatedObject } = action;
-    // console.log(updatedObject)
+
     switch (action.type) {
         case actions.RECIEVED_WATER:
             return {
