@@ -1,16 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as actions from '../../Store/actions/actionTypes';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
-import Moment from 'moment';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import { makeStyles } from '@material-ui/core/styles';
-import DataBox from '../DataBox/DataBox';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as actions from "../../Store/actions/actionTypes";
+import LinearProgress from "@material-ui/core/LinearProgress";
+import { useQuery } from "@apollo/react-hooks";
+import gql from "graphql-tag";
+import Moment from "moment";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles({
+  // outer style of container
+  paper: {
+    width: "210px",
+    height: "110px",
+    margin: "55px 5px 0 5px",
+    border: "1px solid black",
+  },
   // style of checkbox
   root: {
     color: "black",
@@ -92,7 +99,7 @@ export default ({ metricName = "tubingPressure" }) => {
         unit: getLastKnownMeasurement.unit,
         fullDate: fullDate
       }
-      dispatch({ type: actions.RECIEVED_TUBING, updatedObject });
+      dispatch({ type: actions.TUBING_PRESSURE_DATA_RECIEVED, updatedObject });
     },
     [dispatch, error, data]
 
@@ -115,7 +122,7 @@ export default ({ metricName = "tubingPressure" }) => {
 
   return (
     <div>
-      <DataBox>
+      <Paper className={classes.paper}>
         <FormControlLabel
           control={<Checkbox
             checked={isChecked.checked}
@@ -132,7 +139,7 @@ export default ({ metricName = "tubingPressure" }) => {
           labelPlacement="end"
         />
         {isChecked.checked ? <p className={classes.data}>{lastValue} PSI</p> : ""}
-      </DataBox>
+      </Paper>
     </div>
   );
 };

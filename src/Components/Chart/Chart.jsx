@@ -50,6 +50,8 @@ class Chart extends React.Component {
   render() {
     const windowSize = window.innerWidth - 150;
     const { tubingVal, oilVal, casingVal, injVal, waterVal, flareVal } = this.state;
+    console.log(casingVal);
+    console.log(flareVal)
     const tubing = {
       type: 'scatter',
       y: tubingVal,

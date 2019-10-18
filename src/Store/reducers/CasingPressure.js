@@ -1,4 +1,4 @@
-import * as actions from '../actions/actionTypes';
+import * as actions from "../actions/actionTypes";
 
 const initialState = {
     metric: "",
@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
     const { updatedObject } = action;
 
     switch (action.type) {
-        case actions.RECIEVED_CASING:
+        case actions.CASING_PRESSURE_RECIEVED:
             return {
                 ...state,
                 metric: updatedObject.metric,

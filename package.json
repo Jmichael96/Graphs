@@ -9,6 +9,7 @@
     "apollo-boost": "^0.4.4",
     "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
+    "isomorphic-fetch": "^2.2.1",
     "moment": "^2.24.0",
     "plotly.js": "^1.50.0",
     "react": "^16.10.2",
