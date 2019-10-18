@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     textAlign: 'start'
   },
   appBar: {
-    background: "#00a8ff"
+    background: 'navy'
   }
 });
 
