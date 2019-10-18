@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import * as actions from "../../Store/actions/actionTypes";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import { useQuery } from "@apollo/react-hooks";
-import gql from "graphql-tag";
-import Moment from "moment";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../Store/actions/actionTypes';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import { useQuery } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
+import Moment from 'moment';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import { makeStyles } from '@material-ui/core/styles';
+import DataBox from '../DataBox/DataBox';
 
 const useStyles = makeStyles({
-  // outer style of container
-  paper: {
-    width: "210px",
-    height: "110px",
-    margin: "55px 5px 0 5px",
-    border: "1px solid black",
-  },
   // style of checkbox
   root: {
     color: "black",
@@ -121,7 +114,7 @@ export default ({ metricName = "oilTemp" }) => {
 
   return (
     <div>
-      <Paper className={classes.paper}>
+      <DataBox>
         <FormControlLabel
           control={<Checkbox
             checked={isChecked.checked}
@@ -138,7 +131,7 @@ export default ({ metricName = "oilTemp" }) => {
           labelPlacement="end"
         />
         {isChecked.checked ? <p className={classes.data}>{lastValue} F</p> : ""}
-      </Paper>
+      </DataBox>
     </div>
   );
 };
