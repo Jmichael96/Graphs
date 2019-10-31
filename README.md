@@ -1,5 +1,5 @@
 # Graphs
-Please change to the master branch if you wish to see the source code :)
+Please switch to the master branch if you wish to see the source code :)
 
 ## [Live Link](https://jmichael96.github.io/Graphs/)
 
